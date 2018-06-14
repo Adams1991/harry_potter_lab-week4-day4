@@ -11,5 +11,6 @@ CREATE TABLE hogwart_students (
 
 CREATE TABLE houses (
   id serial4 PRIMARY KEY,
-  house_name varchar(255)
+  house_name varchar(255),
+  logo varchar(255)
 )
