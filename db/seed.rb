@@ -1,5 +1,7 @@
 require( 'pry' )
 require_relative('../models/hogwart_student')
+require_relative('../models/house.rb')
+
 
 
 student1 = HogwartStudent.new({
@@ -20,8 +22,8 @@ student1.save()
 student2.save()
 
 house1 = House.new({
-  "name" => "Ravenclaw"
-  "logo" =>
+  "name" => "Ravenclaw",
+  "logo" => "../public/Ravenclawlogo.jpeg"
 })
 
 house1.save()

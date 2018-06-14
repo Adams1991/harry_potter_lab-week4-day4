@@ -11,7 +11,7 @@ class House
   end
 
   def save()
-    sql = "INSERT INTO hogwart_students
+    sql = "INSERT INTO houses
     (
       name,
       logo
