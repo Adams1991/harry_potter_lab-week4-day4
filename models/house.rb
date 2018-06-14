@@ -27,19 +27,19 @@ class House
   end
 
 
-    # def self.all()
-    #   sql = "SELECT * FROM hogwart_students"
-    #   students = SqlRunner.run( sql )
-    #   result = students.map { |student| HogwartStudent.new( student ) }
-    #   return result
-    # end
-    #
-    # def self.find( id )
-    #   sql = "SELECT * FROM hogwart_students WHERE id = $1"
-    #   values = [id]
-    #   student = SqlRunner.run( sql, values )
-    #   result = HogwartStudent.new( student.first )
-    #   return result
-    # end
+    def self.all()
+      sql = "SELECT * FROM houses"
+      houses = SqlRunner.run( sql )
+      result = houses.map { |house| House.new( house ) }
+      return result
+    end
+
+    def self.find( id )
+      sql = "SELECT * FROM houses WHERE id = $1"
+      values = [id]
+      house = SqlRunner.run( sql, values )
+      result = House.new( house.first )
+      return result
+    end
 
 end
