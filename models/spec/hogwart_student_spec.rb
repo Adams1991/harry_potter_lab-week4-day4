@@ -11,6 +11,27 @@ class TestHogwartStudent < MiniTest::Test
                 "age" => 13}
 
     @hogwart_student = HogwartStudent.new(options)
+
+  end
+
+  def test_first_name()
+    result = @hogwart_student.first_name()
+    assert_equal("Harry", result)
+  end
+
+  def test_last_name()
+    result = @hogwart_student.last_name()
+    assert_equal("Potter", result)
+  end
+
+  def test_house()
+    result = @hogwart_student.house()
+    assert_equal("Hufflepuff", result)
+  end
+
+  def test_age()
+    result = @hogwart_student.age()
+    assert_equal(13, result)
   end
 
 end
