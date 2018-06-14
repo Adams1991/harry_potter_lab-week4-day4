@@ -2,7 +2,7 @@ require_relative('../db/sql_runner')
 
 class HogwartStudent
 
-  attr_reader :first_name, :last_name, :house, :age, :id
+  attr_reader :first_name, :last_name, :house_id, :age, :id
 
   def initialize( options )
     @id = options['id'].to_i
@@ -48,6 +48,13 @@ class HogwartStudent
       student = SqlRunner.run( sql, values )
       result = HogwartStudent.new( student.first )
       return result
+    end
+
+    def house()
+      sql = 'SELECT * FROM houses WHERE id = $1'
+      values = [@house_id]
+      house = SqlRunner.run(sql, values)
+      return House.new(house[0])
     end
 
 end
