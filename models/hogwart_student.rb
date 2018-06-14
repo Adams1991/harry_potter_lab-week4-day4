@@ -51,14 +51,14 @@ class HogwartStudent
     end
 
     def house()
-      sql = 'SELECT * FROM houses WHERE id = $1'
+      sql = 'SELECT name FROM houses WHERE id = $1'
       values = [@house_id]
       house = SqlRunner.run(sql, values)
-      return House.new(house[0])
+      return house[0]["name"]
     end
 
     def self.delete_all()
-      sql = "DELETE FROM hogwart_students"
+      sql = "DELETE from hogwart_students"
       SqlRunner.run(sql)
     end
 
