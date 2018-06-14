@@ -2,6 +2,7 @@ require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require( 'pry-byebug' )
 require_relative( './models/hogwart_student.rb' )
+require_relative( './models/house.rb' )
 also_reload( './models/*')
 
 # INDEX
@@ -11,6 +12,7 @@ get('/students') do
 end
 
 get ('/students/new') do
+  @houses = House.all()
   erb( :new )
 end
 

@@ -29,7 +29,7 @@ class HogwartStudent
       $1, $2, $3, $4
     )
     RETURNING *"
-    values = [@first_name, @last_name, @house, @age]
+    values = [@first_name, @last_name, @house_id, @age]
     student_data = SqlRunner.run(sql, values)
     @id =   student_data.first()['id'].to_i
   end
@@ -55,6 +55,11 @@ class HogwartStudent
       values = [@house_id]
       house = SqlRunner.run(sql, values)
       return House.new(house[0])
+    end
+
+    def self.delete_all()
+      sql = "DELETE FROM hogwart_students"
+      SqlRunner.run(sql)
     end
 
 end
