@@ -16,8 +16,16 @@ student2 = HogwartStudent.new({
   "age" => 13
 })
 
-student1.save
-student2.save
+student1.save()
+student2.save()
+
+house1 = House.new({
+  "name" => "Ravenclaw"
+  "logo" =>
+})
+
+house1.save()
+
 
 binding.pry
 nil
