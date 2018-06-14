@@ -8,7 +8,7 @@ class HogwartStudent
     @id = options['id'].to_i
     @first_name = options['first_name']
     @last_name = options['last_name']
-    @house = options['house']
+    @house_id = options['house_id'].to_i
     @age = options['age'].to_i
   end
 
@@ -21,7 +21,7 @@ class HogwartStudent
     (
       first_name,
       last_name,
-      house,
+      house_id,
       age
     )
     VALUES
