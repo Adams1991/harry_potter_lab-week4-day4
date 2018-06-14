@@ -13,7 +13,7 @@ class HogwartStudent
   end
 
   def save()
-    sql = "INSERT INTO pizza_orders
+    sql = "INSERT INTO hogwart_students
     (
       first_name,
       last_name,
@@ -29,3 +29,5 @@ class HogwartStudent
     student_data = SqlRunner.run(sql, values)
     @id =   student_data.first()['id'].to_i
   end
+
+end
