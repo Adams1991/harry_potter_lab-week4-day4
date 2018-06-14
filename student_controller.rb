@@ -9,3 +9,13 @@ get('/students') do
   @students = HogwartStudent.all()
   erb( :index )
 end
+
+get ('/students/new') do
+  erb( :new )
+end
+
+post ('/students') do
+  @student = HogwartStudent.new(params)
+  @student.save()
+erb ( :create )
+end
