@@ -1,3 +1,4 @@
+require( 'pry' )
 require_relative('../models/hogwart_student')
 
 
@@ -17,3 +18,6 @@ student2 = HogwartStudent.new({
 
 student1.save
 student2.save
+
+binding.pry
+nil
