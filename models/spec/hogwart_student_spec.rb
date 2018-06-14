@@ -34,4 +34,9 @@ class TestHogwartStudent < MiniTest::Test
     assert_equal(13, result)
   end
 
+  def test_pretty_name()
+    result = @hogwart_student.pretty_name()
+    assert_equal("Harry Potter", result)
+  end
+
 end
